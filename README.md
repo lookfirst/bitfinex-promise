@@ -13,3 +13,5 @@ bf = new Bitfinex('key', 'secret')
 bf.ticker('btcusd').then (result) ->
   console.log result
 ```
+
+Pull requests and donations welcome: 1KUeUSKN31bPZHvFQ4G9MYRo3VBSsRKR3m
