@@ -1,6 +1,6 @@
 {
 	"name": "bitfinex-promise",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "node.js wrapper for bitfinex cryptocurrency exchange using promises",
 	"main": "lib/Bitfinex.js",
 	"scripts": {
