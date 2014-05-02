@@ -1,0 +1,37 @@
+{
+	"name": "bitfinex-promise",
+	"version": "1.0.0",
+	"description": "node.js wrapper for bitfinex cryptocurrency exchange using promises",
+	"main": "lib/Bitfinex.js",
+	"scripts": {
+		"build": "coffee --compile --output lib/ src/*.coffee",
+		"prepublish": "coffee --compile --output lib/ src/*.coffee",
+		"test": "mocha",
+		"docs": "codo src"
+	},
+	"keywords": [
+		"bitfinex",
+		"litecoin",
+		"bitcoin",
+		"cryptocurrency",
+		"exchange"
+	],
+	"author": {
+		"name": "Jon Stevens",
+		"email": "latchkey@gmail.com"
+	},
+	"devDependencies": {
+		"coffee-script": "1.7.x",
+		"mocha": "1.9.x",
+		"codo": "x.x.x"
+	},
+	"dependencies": {
+		"request": "2.x.x",
+		"bluebird": "1.2.x",
+		"qs": "x.x.x"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/lookfirst/bitfinex-promise.git"
+	}
+}
