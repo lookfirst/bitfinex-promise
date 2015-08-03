@@ -114,7 +114,7 @@ module.exports = class Bitfinex
 		@_makePrivateRequest('margin_infos')
 
 	# @private
-	_nonce: -> @nonce++
+	_nonce: -> '' + @nonce++
 
 	# @private
 	_makePublicRequest: (path, params) ->
