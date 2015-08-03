@@ -10,7 +10,7 @@ qs = require('qs')
 module.exports = class Bitfinex
 	constructor: (@key, @secret) ->
 		@version = '/v1/'
-		@url = 'https://api.bitfinex.com' + @version
+		@url = "https://api.bitfinex.com#{@version}"
 		@nonce = Math.round((new Date()).getTime() / 1000)
 
 	# Public API functions
