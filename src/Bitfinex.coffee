@@ -137,7 +137,7 @@ module.exports = class Bitfinex
 			if params?
 				requestObj.url = "#{requestObj.url}?#{qs.stringify(params)}"
 		else if method == 'POST'
-			payload = params
+			payload = params || {}
 			payload.request = @version + path
 			payload.nonce = @_nonce()
 
