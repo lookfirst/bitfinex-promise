@@ -9,7 +9,8 @@ qs = require('qs')
 #
 module.exports = class Bitfinex
 	constructor: (@key, @secret) ->
-		@url = 'https://api.bitfinex.com/v1/'
+		@version = '/v1/'
+		@url = "https://api.bitfinex.com#{@version}"
 		@nonce = Math.round((new Date()).getTime() / 1000)
 
 	# Public API functions
@@ -113,7 +114,7 @@ module.exports = class Bitfinex
 		@_makePrivateRequest('margin_infos')
 
 	# @private
-	_nonce: -> @nonce++
+	_nonce: -> '' + @nonce++
 
 	# @private
 	_makePublicRequest: (path, params) ->
@@ -136,8 +137,8 @@ module.exports = class Bitfinex
 			if params?
 				requestObj.url = "#{requestObj.url}?#{qs.stringify(params)}"
 		else if method == 'POST'
-			payload = params
-			payload.request = path
+			payload = params || {}
+			payload.request = @version + path
 			payload.nonce = @_nonce()
 
 			payload = new Buffer(JSON.stringify(payload)).toString('base64')
@@ -170,5 +171,3 @@ module.exports = class Bitfinex
 					return reject(message: result)
 
 				resolve(result)
-
-
