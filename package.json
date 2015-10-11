@@ -21,13 +21,13 @@
 		"email": "latchkey@gmail.com"
 	},
 	"devDependencies": {
-		"coffee-script": "1.7.x",
-		"mocha": "1.9.x",
+		"coffee-script": "1.10.x",
+		"mocha": "x.x.x",
 		"codo": "x.x.x"
 	},
 	"dependencies": {
 		"request": "2.x.x",
-		"bluebird": "1.2.x",
+		"bluebird": "2.x.x",
 		"qs": "x.x.x"
 	},
 	"repository": {
