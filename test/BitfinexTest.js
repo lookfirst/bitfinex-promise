@@ -16,6 +16,16 @@
     });
   });
 
+  describe('fetch symbols_details', function() {
+    return it('succeeds', function() {
+      var bitfinex;
+      bitfinex = new Bitfinex();
+      return bitfinex.symbols_details().then(function(result) {
+        return assert(result[0].pair != null);
+      });
+    });
+  });
+
   describe('fetch something private', function() {
     return it('errors when there is no key or secret', function() {
       var bitfinex, error;

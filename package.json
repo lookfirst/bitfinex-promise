@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "coffee --compile --output lib/ src/*.coffee",
 		"prepublish": "coffee --compile --output lib/ src/*.coffee",
-		"test": "mocha",
+		"test": "npm run build && coffee --compile --output test/ src-test/*.coffee && mocha",
 		"docs": "codo src"
 	},
 	"keywords": [

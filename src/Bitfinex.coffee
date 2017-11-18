@@ -24,6 +24,9 @@ module.exports = class Bitfinex
 	symbols: ->
 		@_makePublicRequest('symbols')
 
+	symbols_details: ->
+		@_makePublicRequest('symbols_details')
+
 	lends: (currency, timestamp, limit_lends = 50) ->
 		@_makePublicRequest("lends/#{currency}", {timestamp: timestamp, limit_lends: limit_lends})
 
