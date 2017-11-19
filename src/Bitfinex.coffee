@@ -162,8 +162,8 @@ module.exports = class Bitfinex
 
 		new Promise (resolve, reject) ->
 			request requestObj, (err, response, body) ->
-				if err || response.statusCode != 200
-					statusCode = if response then response.statusCode else null
+				statusCode = if response then response.statusCode else null
+				if err || statusCode != 200
 					return reject(statusCode: statusCode, body: body, err: err)
 
 				try
