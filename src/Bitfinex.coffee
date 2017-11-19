@@ -24,6 +24,9 @@ module.exports = class Bitfinex
 	symbols: ->
 		@_makePublicRequest('symbols')
 
+	symbols_details: ->
+		@_makePublicRequest('symbols_details')
+
 	lends: (currency, timestamp, limit_lends = 50) ->
 		@_makePublicRequest("lends/#{currency}", {timestamp: timestamp, limit_lends: limit_lends})
 
@@ -159,8 +162,9 @@ module.exports = class Bitfinex
 
 		new Promise (resolve, reject) ->
 			request requestObj, (err, response, body) ->
-				if err || response.statusCode != 200
-					reject(statusCode: response.statusCode, body: body, err: err)
+				statusCode = if response then response.statusCode else null
+				if err || statusCode != 200
+					return reject(statusCode: statusCode, body: body, err: err)
 
 				try
 					result = JSON.parse(body)

@@ -1,13 +1,14 @@
 {
 	"name": "bitfinex-promise",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "node.js wrapper for bitfinex cryptocurrency exchange using promises",
 	"main": "lib/Bitfinex.js",
     "license": "MIT",
 	"scripts": {
 		"build": "coffee --compile --output lib/ src/*.coffee",
 		"prepublish": "coffee --compile --output lib/ src/*.coffee",
-		"test": "mocha",
+		"test": "npm run build && npm run test-compile && mocha",
+		"test-compile": "coffee --compile --output test/ src-test/*.coffee",
 		"docs": "codo src"
 	},
 	"keywords": [
