@@ -83,6 +83,9 @@ module.exports = class Bitfinex
 	activeOrders: ->
 		@_makePrivateRequest('orders')
 
+	ordersHistory: ->
+		@_makePrivateRequest('orders/hist')
+
 	activePositions: ->
 		@_makePrivateRequest('positions')
 

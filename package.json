@@ -3,7 +3,7 @@
 	"version": "1.0.6",
 	"description": "node.js wrapper for bitfinex cryptocurrency exchange using promises",
 	"main": "lib/Bitfinex.js",
-    "license": "MIT",
+	"license": "MIT",
 	"scripts": {
 		"build": "coffee --compile --output lib/ src/*.coffee",
 		"prepublish": "coffee --compile --output lib/ src/*.coffee",
